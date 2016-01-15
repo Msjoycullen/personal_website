@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= page_title || "Joy's World" %></title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'https://fonts.googleapis.com/css?family=Lato', 
+    							media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+</head>
+<body>
+	<!-- Top navigation bar applied to all pages -->
+	<nav class="navbar navbar-default">
+	  	<div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <%= link_to "Joy Zhang", "/", :class => "navbar-brand" %>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	        <li><%= link_to "About", root_path %></li>
+	        <li><%= link_to "Projects", "/projects" %></li>
+	        <li><%= link_to "Resume", "/resume" %></li>
+	        <li><%= link_to "Blog", "/blog", controller: "articles" %></li>
+	        <li><%= link_to "Gallery", "/gallery" %></li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+
+	<!-- Top section including title and carousel applied to all pages -->
+	<div class="top">
+		<div class="headerTitle"><%= header_title %><hr></div>
+		<div class="imageOverlay">&nbsp;</div>
+		<div class="topCarousel">
+			<div class="cropImage"><%= image_tag("MonumentValley.jpg", :alt => "Monument Valley") %></div>
+			<div class="cropImage"><%= image_tag("GrandCanyon.jpg", :alt => "Grand Canyon") %></div>
+			<div class="cropImage"><%= image_tag("CedarBreaks.jpg", :alt => "Cedar Breaks") %></div>
+			<div class="cropImage"><%= image_tag("GrandTeton.jpg", :alt => "Grand Teton") %></div>
+		</div>
+	</div>
+
+
+	<% if !user_signed_in? %>
+		<p class="sign_in"><%= link_to "Admin Login", new_user_session_path %></p>
+	<% end %>
+	<% if user_signed_in? %>
+		<div class="buttons">
+			<button class="button">
+				<%= link_to "New Blog", new_article_path %>
+			</button>
+			<button class="button">
+				<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+			</button>
+		</div>
+	<% end %>
+	<%= yield %>
+
+	<script type="text/javascript">
+		$('.topCarousel').slick({
+			dots: false,
+			arrows: false,
+			fade: true,
+			infinite: true,
+		  	slidesToShow: 1,
+		  	autoplay: true,
+		  	autoplaySpeed: 5000
+		});
+	</script>
+</body>
+</html>
