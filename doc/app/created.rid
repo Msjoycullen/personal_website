@@ -1,0 +1,13 @@
+Fri, 15 Jan 2016 20:02:19 -0500
+README.rdoc	Fri, 08 Jan 2016 22:41:38 -0500
+app/controllers/application_controller.rb	Fri, 08 Jan 2016 22:41:38 -0500
+app/controllers/articles_controller.rb	Wed, 13 Jan 2016 19:49:20 -0500
+app/controllers/comments_controller.rb	Wed, 13 Jan 2016 17:12:59 -0500
+app/controllers/pages_controller.rb	Sat, 09 Jan 2016 22:22:51 -0500
+app/helpers/application_helper.rb	Mon, 11 Jan 2016 10:05:07 -0500
+app/helpers/articles_helper.rb	Sun, 10 Jan 2016 18:47:30 -0500
+app/helpers/comments_helper.rb	Wed, 13 Jan 2016 17:10:24 -0500
+app/helpers/pages_helper.rb	Fri, 08 Jan 2016 23:04:02 -0500
+app/models/article.rb	Thu, 14 Jan 2016 00:36:09 -0500
+app/models/comment.rb	Wed, 13 Jan 2016 19:36:56 -0500
+app/models/user.rb	Sun, 10 Jan 2016 22:13:11 -0500
