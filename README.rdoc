@@ -1,6 +1,7 @@
 == README
 
 This is a responsive web app built with Ruby on Rails and hosted on Heroku.
+
 I implemented blogging features and user authentication, as well as bootstrapping the front end and adding dependency injection using AngularJS.
 
 Coming soon (hopefully):
