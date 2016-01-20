@@ -1,10 +1,10 @@
 
 # Change these
-server 'your_server_ip', port: your_port_num, roles: [:web, :app, :db], primary: true
+server '173.255.240.254', port: 22, roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'git@example.com:username/appname.git'
-set :application,     'appname'
-set :user,            'deploy'
+set :repo_url,        'git@github.com:Msjoycullen/personal_website.git'
+set :application,     'PW'
+set :user,            'joy'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
 
